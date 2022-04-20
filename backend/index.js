@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const mainController = require('./controllers/journalController')
+const journalController = require('./controllers/journalController')
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
