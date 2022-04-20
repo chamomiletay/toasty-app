@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
-const mainController = require('./controllers/mainController')
+const mainController = require('./controllers/journalController')
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 //*note: CHANGE CONTROLLER NAME LATER
-app.use('/main/', mainController);
+app.use('/journal/', journalController);
 
 const port = process.env.PORT || 4009;
 
