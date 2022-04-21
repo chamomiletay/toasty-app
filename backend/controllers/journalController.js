@@ -13,10 +13,23 @@ router.get('/test', (req, res) => {
 })
 
 
-//--- compile list of journal entries ---//
-router.get('/', (req, res) => {
-    res.send('hello!');
+//--- compile list of journal entries (json) ---//
+router.get('/', (req, res, next) => {
+    Entry.find({})
+    .then((entries) => {
+        res.send(entries);
+    })
+    .catch(next)
 })
+
+//--- compile list of journal entries ---//
+// router.get('/', (req, res, next) => {
+//     Entry.find({})
+//     .then((entries) => {
+//         res.send(entries);
+//     })
+//     .catch(next)
+// })
 
 
 //--- retrieve journal entry by id ---//
