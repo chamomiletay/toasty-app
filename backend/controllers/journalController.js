@@ -42,7 +42,11 @@ router.get('/:id', (req, res, next) => {
 router.post('/', (req, res) => {
 //--- check if route is accessed ---//
     console.log('you have reached your destination');
-    //[Create info goes here]
+    Entry.create(req.body)
+    .then ((entries) => {
+        res.redirect('/')
+    })
+    .catch(err => res.send(err))
 })
 
 //--- export router! ---//
