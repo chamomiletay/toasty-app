@@ -34,7 +34,11 @@ router.get('/', (req, res, next) => {
 
 //--- retrieve journal entry by id ---//
 router.get('/:id', (req, res, next) => {
-
+    Entry.findById(req.params.id)
+    .then((entries) => {
+        res.send(entries);
+    })
+    .catch(next)
 })
 
 
