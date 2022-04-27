@@ -32,4 +32,4 @@
 
 
     //--- display a randomized affirmation in corresponding container on page load--//
-    ranAffirmation.innerHTML = random(affirmations);
+    ranAffirmation.innerHTML = `"${random(affirmations)}"`;
