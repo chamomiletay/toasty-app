@@ -33,3 +33,17 @@
 
     //--- display a randomized affirmation in corresponding container on page load--//
     ranAffirmation.innerHTML = `"${random(affirmations)}"`;
+
+    const openBtn = document.getElementById('open');
+    const modal_container = document.getElementById('modal-container');
+    const closeBtn = document.getElementById('close');
+
+    //--- open info modal on button click ---//
+    openBtn.addEventListener('click', ()=> {
+        modal_container.classList.add('show');
+    });
+
+    //--- close info modal on button click ---//
+    closeBtn.addEventListener('click', ()=> {
+        modal_container.classList.remove('show');
+    })
