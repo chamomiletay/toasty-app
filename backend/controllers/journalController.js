@@ -33,12 +33,19 @@ router.get('/', (req, res, next) => {
 
 
 //--- retrieve journal entry by id ---//
-router.get('/:id', (req, res, next) => {
+router.get('/:id/edit', (req, res, next) => {
     Entry.findById(req.params.id)
     .then((entries) => {
-        res.send(entries);
+        res.render('edit', entries);
     })
     .catch(next)
+})
+
+
+//--- redirect to create new journal entry page ---//
+router.get('/new', (req, res) => {
+    console.log('new route has been reached!');
+    res.render('new');
 })
 
 

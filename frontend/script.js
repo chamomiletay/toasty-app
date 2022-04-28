@@ -26,6 +26,7 @@
     const modal_container = document.getElementById('modal-container');
     const closeBtn = document.getElementById('close');
     const deleteBtn = document.querySelectorAll('.remove-entry');
+    const newEntryBtn = document.getElementById('new-entry');
 
     //-- empty value for selected journal id --//
     let selectedItem = '';
@@ -58,11 +59,15 @@
 
 
 //------------------- AXIOS ROUTES -------------------//
-    // const retrieveData = () => {
-    //     axios.get('http://localhost:4009/journal')
-    // }
 
+//--- create new journal entry ---//
+newEntryBtn.addEventListener('click', () => {
+    axios.get('http://localhost:4009/journal/new')
+    .then( () => res.render('new'))
+})
+
+//--- delete existing journal entry ---//
 deleteBtn.forEach(remove => remove.addEventListener('click', () => {
 // delete an existing journal entry
-    axios.delete(`http://localhost:4009/journal/6269e3604b26f8bf7c962e2c`)
+    axios.delete(`http://localhost:4009/journal/${selectedItem}`)
 }))
