@@ -4,7 +4,7 @@ const cors = require('cors');
 const methodOverride = require('method-override');
 const ejsLayouts = require('express-ejs-layouts');
 
-const journalController = require('./backend/controllers/journalController');
+const journalController = require('./controllers/journalController');
 
 const app = express();
 app.use(express.urlencoded({extended:true}));
