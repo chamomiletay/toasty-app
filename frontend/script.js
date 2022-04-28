@@ -62,8 +62,7 @@
 
 //--- create new journal entry ---//
 newEntryBtn.addEventListener('click', () => {
-    axios.get('http://localhost:4009/journal/new')
-    .then( () => res.render('new'))
+    newEntryBtn.setAttribute('href', 'http://localhost:4009/journal/new');
 })
 
 //--- delete existing journal entry ---//
