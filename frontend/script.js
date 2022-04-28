@@ -18,6 +18,17 @@
         // DELETE ("/journal/:id") - delete existing entry
         // GET ("/new") - render page to create new entry
     //models - schema & seed data
+//-------- ✧ END BRAIN DUMP ✧ --------//
+
+
+//----------------- Set variables -----------------//
+    const openBtn = document.getElementById('open');
+    const modal_container = document.getElementById('modal-container');
+    const closeBtn = document.getElementById('close');
+    const deleteBtn = document.querySelectorAll('.remove-entry');
+
+    //-- empty value for selected journal id --//
+    let selectedItem = '';
 
     const affirmations = [
         "I am still learning and finding my way. Mistakes are okay and expected.",
@@ -30,14 +41,11 @@
     let random = arr => arr[Math.floor(Math.random()*arr.length)];
     let ranAffirmation = document.querySelector('#affirmation');
 
+        //--- display a randomized affirmation in corresponding container on page load--//
+        ranAffirmation.innerHTML = `"${random(affirmations)}"`;
 
-    //--- display a randomized affirmation in corresponding container on page load--//
-    ranAffirmation.innerHTML = `"${random(affirmations)}"`;
 
-    const openBtn = document.getElementById('open');
-    const modal_container = document.getElementById('modal-container');
-    const closeBtn = document.getElementById('close');
-
+//-------------- MODAL FUNCTIONALITY --------------//
     //--- open info modal on button click ---//
     openBtn.addEventListener('click', ()=> {
         modal_container.classList.add('show');
@@ -47,3 +55,14 @@
     closeBtn.addEventListener('click', ()=> {
         modal_container.classList.remove('show');
     })
+
+
+//------------------- AXIOS ROUTES -------------------//
+    // const retrieveData = () => {
+    //     axios.get('http://localhost:4009/journal')
+    // }
+
+deleteBtn.forEach(remove => remove.addEventListener('click', () => {
+// delete an existing journal entry
+    axios.delete(`http://localhost:4009/journal/6269e3604b26f8bf7c962e2c`)
+}))
