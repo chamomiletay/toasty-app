@@ -4,7 +4,7 @@ const cors = require('cors');
 const methodOverride = require('method-override');
 const ejsLayouts = require('express-ejs-layouts');
 
-const journalController = require('./controllers/journalController');
+const journalController = require('./backend/controllers/journalController');
 
 const app = express();
 app.use(express.urlencoded({extended:true}));
@@ -14,6 +14,7 @@ app.use(methodOverride('_method'));
 app.use(cors());
 app.use('/journal/', journalController);
 
+app.set('views', 'backend/views')
 app.set('view engine', 'ejs');
 app.use(ejsLayouts);
 
