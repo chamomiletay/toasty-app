@@ -1,4 +1,5 @@
 const express = require('express');
+const { resetWatchers } = require('nodemon/lib/monitor/watch');
 const router = express.Router();
 
 //-- require journal entry model --//
@@ -22,8 +23,18 @@ router.get('/', (req, res, next) => {
     .catch(next)
 })
 
+// //--- render index page ---//
+// router.get('/index', (req, res) => {
+//     console.log('index route has been reached!')
+//     results = Entry.find({})
+//     results.then((entys) => {
+//         res.render('index', {entries:entys})
+//     })
+// })
+
 //--- render index page ---//
 router.get('/index', (req, res, next) => {
+    console.log('index route has been reached!')
     res.render('index')
 })
 
@@ -52,11 +63,17 @@ router.post('/', (req, res) => {
 
     Entry.create(req.body)
     .then ((entries) => {
-        res.redirect('/')
+        res.redirect('/journal/index')
     })
     .catch(err => res.send(err))
 })
 
+//---- show page of existing entry (by id) ----//
+router.get('/:id', (req, res) => {
+    Entry.findById(req.params.id)
+    .then(entries =>
+        res.render('show', entries))
+})
 
 //--- update existing journal entry  ---//
 router.put('/:id', (req, res) => {
@@ -64,10 +81,17 @@ router.put('/:id', (req, res) => {
     console.log('update route has been reached');
 
     Entry.findOneAndUpdate(
-        {_id: req.params.id}, req.body).then(entries =>
-            res.send(entries)
+        {_id: req.params.id},
+        {
+            date: req.body.date,
+            mood: req.body.mood,
+            entry: req.body.entry
+        }, 
+        ).then(entries =>
+            res.render('show', entries)
     );
 });
+
 
 //--- delete existing journal entry ---//
 router.delete('/:id', (req, res) => {
