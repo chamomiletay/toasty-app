@@ -1,5 +1,7 @@
 body {
     font-family: 'Josefin Sans', sans-serif;
+    /* background-image: url('/img/clouds.jpeg');
+    background-repeat: cover; */
     background-color: aliceblue;
     text-align: center;
     margin: 50px;
@@ -150,3 +152,4 @@ p {
     width: 500px;
     margin: 10px 0 20px 0;
 }
+

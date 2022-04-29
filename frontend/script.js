@@ -43,7 +43,7 @@
     let ranAffirmation = document.querySelector('#affirmation');
 
         //--- display a randomized affirmation in corresponding container on page load--//
-        ranAffirmation.innerHTML = `"${random(affirmations)}"`;
+        ranAffirmation.innerHTML = `Daily affirmation: "${random(affirmations)}"`;
 
 
 //-------------- MODAL FUNCTIONALITY --------------//

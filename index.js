@@ -17,6 +17,7 @@ app.use('/journal/', journalController);
 app.set('views', 'backend/views')
 app.set('view engine', 'ejs');
 app.use(ejsLayouts);
+app.use(express.static('./backend/assets/public'));
 
 const port = process.env.PORT || 4009;
 

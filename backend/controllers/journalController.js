@@ -22,14 +22,10 @@ router.get('/', (req, res, next) => {
     .catch(next)
 })
 
-//--- compile list of journal entries ---//
-// router.get('/', (req, res, next) => {
-//     Entry.find({})
-//     .then((entries) => {
-//         res.send(entries);
-//     })
-//     .catch(next)
-// })
+//--- render index page ---//
+router.get('/index', (req, res, next) => {
+    res.render('index')
+})
 
 
 //--- retrieve journal entry by id ---//

@@ -1,26 +1,39 @@
+<head>
+    <link rel="stylesheet" href="/app.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&display=swap" rel="stylesheet">
+</head>
 <body>
     <h1>New Journal Entry</h1>
-    
+    <br/>
 
     <form action="/journal" method="POST">
+
+    <div class="container">
         <div class="form-group">
             <label for="date">Date:</label>
             <input type="text" id="date" name="date" class="form-control" />
         </div>
+
+        <br/>
 
         <div class="form-group">
             <label for="entry">How are you feeling today?</label>
             <input type="text" id="mood" name="mood" class="form-control" id="mood-tracker"/>
         </div>
 
+        <br/>
+
         <div class="form-group">
             <label for="entry">Journal Entry:</label>
             <input type="text" id="entry" name="entry" class="form-control" id="journal-entry" />
         </div>
+    </div>
+        <br/>
+        <!-- redirect to index page -->
+        <input type="button" class="btn btn-primary" value="save" href="">
 
         <!-- redirect to index page -->
-        <input type="button" class="btn btn-primary" value="save" href="/index">
-
+        <a href="/journal/index">Cancel</a>
 
     </form>
 
