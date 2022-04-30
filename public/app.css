@@ -3,7 +3,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Josefin Sans', sans-serif;
-    background-image: url('/img/clouds.jpg');
+    background-image: url('/img/nature.jpg');
+    background-size: cover;
     /* background-repeat: cover; */
     /* background-color: aliceblue; */
     text-align: center;
@@ -26,7 +27,7 @@ header h1 {
     font-family: 'Josefin Sans', sans-serif;
     /* background-image: url('/img/clouds.jpeg');
     background-repeat: cover; */
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
     margin: 20px 80px;
     padding: 20px;
@@ -143,16 +144,17 @@ p {
 .customize {
     font-family: 'Barlow', sans-serif;
     font-size: 14px;
-    color: slategray;
+    color: black;
     border: 2px solid cadetblue;
     border-radius: 5px;
     background-color: mediumaquamarine;
 }
 
 #demo {
-    height: 300px;
-    width: 500px;
-    margin: 10px 0 20px 0;
+    height: 350px;
+    width: 435px;
+    margin: 30px 0 30px 80px;
+    display: block;
 }
 
 #footer {
@@ -231,7 +233,13 @@ li {
     border-radius: 10px;
     margin: 0;
     display: inline-block;
+    opacity: 0.8;
 }
+
+.delete-btn:hover {
+    opacity: 1;
+}
+
 
 .modal-container {
     display: flex;
@@ -255,12 +263,13 @@ li {
 .info-modal {
     background-color: white;
     text-align: center;
-    width: 500px;
+    width: 600px;
     padding: 40px 60px;
     border: 2px solid navajowhite;
     border-radius: 10px;
     max-width: 100%;
-    height: 500px;
+    height: 600px;
+    margin-top: 100px;
 }
 
 #footer {
@@ -272,4 +281,9 @@ li {
     top: 903px;
     width: 100%;
     height: 2.5rem;
+}
+
+a {
+    font-weight: 900;
+    font-family: 'Josefin Sans', sans-serif;
 }
