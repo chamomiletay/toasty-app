@@ -1,2 +1,37 @@
-<h1>testing 123</h1>
-<a href="/journal/index">Return</a>
+<div class="new">
+    <h1>Edit Journal Entry</h1>
+    <br/>
+
+    <form action="/journal/<%=id%>/?_method=put" method="POST">
+
+    <div class="container">
+        <div class="form-group" id="date-group">
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" class="form-control" value="<%=date%>" />
+        </div>
+
+
+        <div class="form-group" id="mood-group">
+            <label for="entry">How are you feeling today?</label>
+            <input type="text" id="mood" name="mood" class="form-control" id="mood-tracker" value="<%=mood%>"/>
+        </div>
+
+        <br/>
+
+        <div class="form-group">
+            <label for="entry">Reflection/Notes:</label>
+            <br/>
+            <textarea id="journal-entry" name="entry" class="form-control" rows="15" cols="60">
+                <%=entry%>
+                </textarea>
+        </div>
+    </div>
+        <br/>
+        <!-- redirect to index page -->
+        <input type="submit" class="btn btn-primary" value="save">
+
+        <!-- redirect to index page -->
+        <a href="/journal/index">Cancel</a>
+
+    </form>
+</div>

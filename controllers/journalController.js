@@ -72,7 +72,7 @@ router.get('/:id', (req, res) => {
 })
 
 //--- update existing journal entry  ---//
-router.put('/:id/edit', (req, res) => {
+router.put('/:id', (req, res) => {
     //--- check if route is accessed ---//
     console.log('update route has been reached');
 
@@ -83,9 +83,12 @@ router.put('/:id/edit', (req, res) => {
             mood: req.body.mood,
             entry: req.body.entry
         }, 
-        ).then(entry =>
+        {new: true}
+        )
+        .then(entry => {
             res.render('show', entry)
-    );
+        })
+        .catch(console.error);
 });
 
 
@@ -97,7 +100,7 @@ router.delete('/:id', (req, res) => {
     Entry.findOneAndRemove(
         {_id: req.params.id},
     )
-    .then( () => res.redirect('/'))
+    .then( () => res.redirect('/journal/index'))
     .catch(err => res.send(err))
 })
 
