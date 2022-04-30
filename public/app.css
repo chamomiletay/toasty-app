@@ -225,3 +225,9 @@ li {
 #new-link {
     text-align: center;
 }
+
+.link-btn {
+    background-color: aliceblue;
+    padding: 10px 15px;
+    border-radius: 15px;
+}

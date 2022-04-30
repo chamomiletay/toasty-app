@@ -14,7 +14,7 @@
 
 <ul class="list-group">
     <% entries.forEach(v => { %>
-        <li><a href="/journal/<%=v.id%>/edit"><%=v.date %></a></li>
+        <li><input class="link-btn" type="button" onclick="location.href='/journal/<%=v.id%>/edit'" value="<%=v.date %>"></li>
     <% }); %>
 </ul>
 
