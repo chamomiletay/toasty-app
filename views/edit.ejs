@@ -4,13 +4,14 @@
 
     <form action="/journal/<%=id%>/?_method=put" method="POST">
 
+<!-- display/manipulate 'date' information -->
     <div class="container">
         <div class="form-group" id="date-group">
             <label for="date">Date:</label>
             <input type="date" id="date" name="date" class="form-control" value="<%=date%>" />
         </div>
 
-
+<!-- display/manipulate 'mood' information -->
         <div class="form-group" id="mood-group">
             <label for="entry">How are you feeling today?</label>
             <input type="text" id="mood" name="mood" class="form-control" id="mood-tracker" value="<%=mood%>"/>
@@ -18,6 +19,7 @@
 
         <br/>
 
+<!-- display/manipulate notes -->
         <div class="form-group">
             <label for="entry">Reflection/Notes:</label>
             <br/>

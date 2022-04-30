@@ -64,12 +64,14 @@ router.post('/', (req, res) => {
     .catch(err => res.send(err))
 })
 
+
 //---- show page of existing entry (by id) ----//
 router.get('/:id', (req, res) => {
     Entry.findById(req.params.id)
     .then(entries =>
         res.render('show', entries))
 })
+
 
 //--- update existing journal entry  ---//
 router.put('/:id', (req, res) => {
