@@ -12,6 +12,12 @@
 <!-- populate data below -->
 
 
+<ul class="list-group">
+    <% entries.forEach(v => { %>
+        <li>Date:<%=v.date %></li>
+    <% }); %>
+</ul>
+
 
 <!-- navigate to create new entry page -->
     <a href="/journal/new">New Entry</a>

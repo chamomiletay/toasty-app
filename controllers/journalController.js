@@ -35,7 +35,11 @@ router.get('/', (req, res, next) => {
 //--- render index page ---//
 router.get('/index', (req, res, next) => {
     console.log('index route has been reached!')
-    res.render('index')
+    Entry.find({})
+    .then((entries) => {
+        res.render('index', {entries:entries})
+    })
+    .catch(next)
 })
 
 
