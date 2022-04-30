@@ -6,7 +6,7 @@
     <button id="open">Info</button>
 </div>
 
-<div class="new">
+<div class="new" id="index-container">
     <h1>Logged Journal Entries</h1>
 
 <!-- populate data below -->
@@ -14,10 +14,15 @@
 
 <ul class="list-group">
     <% entries.forEach(v => { %>
-        <li><input class="link-btn" type="button" onclick="location.href='/journal/<%=v.id%>'" value="<%=v.date %>"></li>
-        <form action="/journal/<%=v.id%>/?_method=DELETE" method="POST" class="delete">
-            <input type="submit" value="Delete" class="delete-btn" />
-          </form>
+        <li>
+            <input class="link-btn" type="button" onclick="location.href='/journal/<%=v.id%>'" value="<%=v.date %>">
+
+            <form action="/journal/<%=v.id%>/?_method=DELETE" method="POST" class="delete">
+                <input type="submit" value="x" class="delete-btn" />
+            </form>
+
+        </li>
+        
 
     <% }); %>
 </ul>
@@ -27,45 +32,9 @@
     <a id="new-link" href="/journal/new">New Entry</a>
 </div>
 
-
-
-<!-- <div class="list-container">
-
-    <ul class="entries-list">
-        <li class="entry-links">
-            
-        </li>
-    </ul> -->
-
-    
-   <!-- <form>
-    create blank buttons - will fill w journal entry 'titles'
-    <p><%=this.date%></p>
-    <a href="/journal/index/<%=this.id%>/show" class="btn btn-primary"><%=this.date%></a>
-
-    -- button to delete existing entry --
-    <button type="button" class="remove-entry">x</button>
-
-   <br/>
-
-    <input class="list-entry" type="button" value="">
-
-    button to delete existing entry
-    <button type="button" class="remove-entry">x</button>
-
-
-    <br/>
-
-
-    create new journal entry button !
-    <input id="new-entry" type="button" value="New Entry" onclick="location.href='http://localhost:4009/journal/new'">
-
-    </form> -->
-</div>
-
-
+<!-- change background -->
     <div class="custom-container">
-    <input class="customize" type="button" value="Change Theme">
+    <button class="customize" id="custom-btn">Change Theme</button> 
     </div>
 
 

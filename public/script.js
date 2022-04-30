@@ -27,6 +27,8 @@ const modal_container = document.getElementById('modal-container');
 const closeBtn = document.getElementById('close');
 const deleteBtn = document.querySelectorAll('.remove-entry');
 const newEntryBtn = document.getElementById('new-entry');
+const customBtn = document.getElementById('custom-btn');
+const body = document.getElementsByTagName('body');
 
 //-- empty value for selected journal id --//
 let selectedItem = '';
@@ -38,12 +40,23 @@ const affirmations = [
     "I possess the qualities needed to be extremely successful.",
     "I am worthy of love, rest, and happiness."
 ]
+
+const backgrounds = [
+    "/img/clouds.jpg",
+    "/img/plant-unsplash.jpg"
+]
 //-- set variable to randomize array value displayed on screen --//
 let random = arr => arr[Math.floor(Math.random()*arr.length)];
 let ranAffirmation = document.querySelector('#affirmation');
 
     //--- display a randomized affirmation in corresponding container on page load--//
     ranAffirmation.innerHTML = `Affirmation: "${random(affirmations)}"`;
+
+//-------------- CHANGE THEME BG --------------//
+customBtn.addEventListener('click', () => {
+    body.setAttribute("style", `background-image: url("${random(backgrounds)}")`)
+    console.log('click');
+})
 
 
 //-------------- MODAL FUNCTIONALITY --------------//
@@ -56,3 +69,5 @@ openBtn.addEventListener('click', ()=> {
 closeBtn.addEventListener('click', ()=> {
     modal_container.classList.remove('show');
 })
+
+
