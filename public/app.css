@@ -2,9 +2,9 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Josefin Sans', sans-serif;
-    /* background-image: url('/img/clouds.jpeg');
-    background-repeat: cover; */
-    background-color: aliceblue;
+    background-image: url('/img/clouds.jpg');
+    /* background-repeat: cover; */
+    /* background-color: aliceblue; */
     text-align: center;
     /* margin: 50px; */
     /* display: flex;
@@ -24,7 +24,7 @@ header h1 {
     font-family: 'Josefin Sans', sans-serif;
     /* background-image: url('/img/clouds.jpeg');
     background-repeat: cover; */
-    background-color: aliceblue;
+    background-color: rgba(255, 255, 255, 0.6);
     text-align: center;
     margin: 20px;
     padding: 20px;
@@ -199,8 +199,17 @@ p {
 
 textarea {
     padding: 20px;
+    line-height: 25px;
 }
 
 .form-group {
     margin: 10px 0;
+}
+
+.date-group {
+    display: inline;
+}
+
+.mood-group {
+    display: inline;
 }
