@@ -182,3 +182,25 @@ p {
     width: 100vw;
     margin: 0;
 }
+
+.journal-container {
+    display: inline-block;
+    background-color: white;
+    height: 50vh;
+    width: 50vw;
+    padding: 30px 50px;
+    border: 2px solid cornflowerblue;
+    border-radius: 10px;
+}
+
+.navigation {
+    margin: 20px 0;
+}
+
+textarea {
+    padding: 20px;
+}
+
+.form-group {
+    margin: 10px 0;
+}
