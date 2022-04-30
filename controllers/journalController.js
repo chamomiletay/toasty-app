@@ -23,14 +23,6 @@ router.get('/', (req, res, next) => {
     .catch(next)
 })
 
-// //--- render index page ---//
-// router.get('/index', (req, res) => {
-//     console.log('index route has been reached!')
-//     results = Entry.find({})
-//     results.then((entys) => {
-//         res.render('index', {entries:entys})
-//     })
-// })
 
 //--- render index page ---//
 router.get('/index', (req, res, next) => {
@@ -80,7 +72,7 @@ router.get('/:id', (req, res) => {
 })
 
 //--- update existing journal entry  ---//
-router.put('/:id', (req, res) => {
+router.put('/:id/edit', (req, res) => {
     //--- check if route is accessed ---//
     console.log('update route has been reached');
 

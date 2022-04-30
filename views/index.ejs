@@ -14,13 +14,13 @@
 
 <ul class="list-group">
     <% entries.forEach(v => { %>
-        <li>Date:<%=v.date %></li>
+        <li><a href="/journal/<%=v.id%>/edit"><%=v.date %></a></li>
     <% }); %>
 </ul>
 
 
 <!-- navigate to create new entry page -->
-    <a href="/journal/new">New Entry</a>
+    <a id="new-link" href="/journal/new">New Entry</a>
 </div>
 
 
