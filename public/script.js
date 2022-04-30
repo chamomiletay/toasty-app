@@ -43,7 +43,7 @@ let random = arr => arr[Math.floor(Math.random()*arr.length)];
 let ranAffirmation = document.querySelector('#affirmation');
 
     //--- display a randomized affirmation in corresponding container on page load--//
-    ranAffirmation.innerHTML = `Daily affirmation: "${random(affirmations)}"`;
+    ranAffirmation.innerHTML = `Affirmation: "${random(affirmations)}"`;
 
 
 //-------------- MODAL FUNCTIONALITY --------------//
