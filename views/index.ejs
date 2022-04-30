@@ -1,11 +1,5 @@
-<head>
-    <link rel="stylesheet" href="/app.css">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&display=swap" rel="stylesheet">
-    <title>toasty app .</title>
-</head>
 
 <body>
-    <%- include('../partials/header.ejs') %>
 
 <div class="info-btn-container">
     <button id="open">Info</button>
@@ -13,28 +7,37 @@
 
 
 <div class="list-container">
-   <form>
-    <!-- create blank buttons - will fill w journal entry 'titles'-->
-    <input class="list-entry" type="button" value="">
 
-    <!---- button to delete existing entry ---->
+    <ul class="entries-list">
+        <li class="entry-links">
+            
+        </li>
+    </ul>
+
+
+   <!-- <form>
+    create blank buttons - will fill w journal entry 'titles'
+    <p><%=this.date%></p>
+    <a href="/journal/index/<%=this.id%>/show" class="btn btn-primary"><%=this.date%></a>
+
+    -- button to delete existing entry --
     <button type="button" class="remove-entry">x</button>
 
    <br/>
 
     <input class="list-entry" type="button" value="">
 
-    <!-- button to delete existing entry -->
+    button to delete existing entry
     <button type="button" class="remove-entry">x</button>
 
 
     <br/>
 
 
-    <!-- create new journal entry button ! -->
+    create new journal entry button !
     <input id="new-entry" type="button" value="New Entry" onclick="location.href='http://localhost:4009/journal/new'">
 
-    </form>
+    </form> -->
 </div>
 
     <div class="quotes-container">
@@ -58,7 +61,7 @@
     </div>
 </div>
 
-    <script src="/script.js"></script>
+    
 
-    <%- include('../partials/footer.ejs') %>
+
 </body>

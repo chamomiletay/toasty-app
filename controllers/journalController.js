@@ -87,8 +87,8 @@ router.put('/:id', (req, res) => {
             mood: req.body.mood,
             entry: req.body.entry
         }, 
-        ).then(entries =>
-            res.render('show', entries)
+        ).then(entry =>
+            res.render('show', entry)
     );
 });
 
